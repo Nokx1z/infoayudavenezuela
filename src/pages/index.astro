@@ -1,0 +1,241 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { estados, insumos, flagUrl, slug } from "../data/centros";
+
+const totalCentros = estados.reduce((s, e) => s + e.ciudades.reduce((s2, c) => s2 + c.centros.length, 0), 0);
+const totalEstados = estados.length;
+const totalCiudades = estados.reduce((s, e) => s + e.ciudades.length, 0);
+---
+
+<Layout title="Inicio">
+  <div class="alert-box">
+    <div class="alert-icon">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+    </div>
+    <span><strong>Sismo 24 de junio de 2026</strong> &mdash; Todos los centros de acopio están recibiendo donaciones</span>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat">
+      <span class="stat-num">{totalCentros}</span>
+      <span class="stat-lbl">Centros de Acopio</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">{totalEstados}</span>
+      <span class="stat-lbl">Estados</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">{totalCiudades}</span>
+      <span class="stat-lbl">Ciudades</span>
+    </div>
+  </div>
+
+  <div class="search-box">
+    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    <input type="text" id="searchInput" placeholder="Buscar estado..." oninput="filterCards(this.value)" />
+  </div>
+
+  <div class="grid" id="stateGrid">
+    {estados.sort((a, b) => a.estado.localeCompare(b.estado)).map(({ estado, ciudades }) => {
+      const count = ciudades.reduce((s, c) => s + c.centros.length, 0);
+      const cities = ciudades.map(c => c.ciudad).join(", ");
+      return (
+        <a href={`/estado/${slug(estado)}`} class="card" data-name={estado.toLowerCase()}>
+          <div class="card-img">
+            <img src={flagUrl(estado)} alt="" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-top">
+              <h3>{estado}</h3>
+              <span class="card-badge">{count}</span>
+            </div>
+            <p class="card-cities">{cities}</p>
+          </div>
+        </a>
+      );
+    })}
+  </div>
+
+  <div class="section-card">
+    <h3 class="section-title">&#128230; Insumos que se están recibiendo</h3>
+    <div class="tags">
+      {insumos.map((i) => <span class="tag">{i}</span>)}
+    </div>
+  </div>
+
+  <a href="/emergencia" class="cta-emergencia">
+    <span class="cta-icon">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+    </span>
+    <div class="cta-body">
+      <strong>Números de emergencia</strong>
+      <small>Bomberos, Protección Civil, Rescate, Policía</small>
+    </div>
+    <span class="cta-arrow">&rarr;</span>
+  </a>
+</Layout>
+
+<script>
+  function filterCards(value) {
+    const q = value.toLowerCase().trim();
+    document.querySelectorAll("#stateGrid .card").forEach(card => {
+      card.style.display = !q || card.dataset.name.includes(q) ? "" : "none";
+    });
+  }
+  window.filterCards = filterCards;
+</script>
+
+<style>
+  .alert-box {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: var(--radius);
+    padding: 0.7rem 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.86rem;
+    color: #991B1B;
+  }
+  .alert-icon { display: flex; flex-shrink: 0; }
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .stat {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 0.5rem;
+    text-align: center;
+  }
+  .stat-num { display: block; font-size: 1.5rem; font-weight: 700; color: var(--blue); line-height: 1.1; margin-bottom: 0.2rem; }
+  .stat-lbl { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  .search-box {
+    position: relative;
+    margin-bottom: 1.25rem;
+  }
+  .search-icon {
+    position: absolute;
+    top: 50%; left: 1rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .search-box input {
+    width: 100%;
+    padding: 0.7rem 1rem 0.7rem 2.6rem;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 0.9rem;
+    background: white;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+  }
+  .search-box input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(0,36,125,0.08);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+  .card {
+    background: white;
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: all .2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    border-color: #C7CDD8;
+  }
+  .card-img {
+    height: 80px;
+    overflow: hidden;
+    background: #F1F5F9;
+  }
+  .card-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform .3s;
+  }
+  .card:hover .card-img img { transform: scale(1.04); }
+  .card-body { padding: 0.8rem 1rem 0.85rem; }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.2rem;
+  }
+  .card h3 { font-size: 0.92rem; font-weight: 600; color: var(--text); }
+  .card-badge {
+    background: var(--blue);
+    color: white;
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.1rem 0.5rem;
+    border-radius: 999px;
+    min-width: 22px;
+    text-align: center;
+  }
+  .card-cities {
+    font-size: 0.76rem;
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .section-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 1.1rem 1.2rem;
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+  }
+  .section-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.7rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .tag {
+    background: #FFFBEB;
+    color: #92400E;
+    border: 1px solid #FDE68A;
+    padding: 0.25rem 0.65rem;
+    border-radius: 8px;
+    font-size: 0.76rem;
+  }
+  .cta-emergencia {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    background: linear-gradient(135deg, var(--red), var(--red-dark));
+    color: white;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: transform .15s, box-shadow .2s;
+    box-shadow: 0 4px 16px rgba(207,20,43,0.15);
+    margin-bottom: 0.5rem;
+  }
+  .cta-emergencia:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(207,20,43,0.25); }
+  .cta-icon { display: flex; flex-shrink: 0; }
+  .cta-body { flex: 1; }
+  .cta-body strong { display: block; font-size: 0.9rem; font-weight: 600; }
+  .cta-body small { font-size: 0.74rem; opacity: .8; }
+  .cta-arrow { font-size: 1.2rem; font-weight: 600; }
+  @media (max-width:640px) {
+    .stats-row { gap: .5rem; }
+    .stat-num { font-size: 1.3rem; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
