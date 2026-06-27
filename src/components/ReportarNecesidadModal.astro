@@ -40,10 +40,15 @@
       </div>
 
       <div class="form-row">
-        <div class="form-group">
-          <label for="necFormCiudad">Ciudad *</label>
-          <input type="text" id="necFormCiudad" placeholder="Ej. Barquisimeto, Macuto" required />
-        </div>
+        <div class="form-group" id="necFormPaisGroup" style="display: none;">
+        <label for="necFormPais">País *</label>
+        <input type="text" id="necFormPais" placeholder="Ej. Colombia, España" maxlength="60" />
+      </div>
+
+      <div class="form-group">
+        <label for="necFormCiudad">Ciudad *</label>
+        <input type="text" id="necFormCiudad" placeholder="Ej. Barquisimeto, Macuto" required />
+      </div>
         <div class="form-group">
           <label for="necFormLugar">Lugar / Nombre *</label>
           <input type="text" id="necFormLugar" placeholder="Ej. Refugio La Paz, Centro Comunitario" required />
