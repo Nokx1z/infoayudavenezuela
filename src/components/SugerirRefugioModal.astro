@@ -7,6 +7,11 @@
     <form id="sugerirRefugioForm" class="modal-form">
       <p class="form-help">Ingresa los datos del refugio. Se publicará en vivo una vez sea verificado.</p>
 
+      <div class="alert-box" style="margin-bottom: 1rem; padding: 0.6rem; border-radius: 6px; font-size: 0.8rem;">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink: 0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <span>Para agregar refugios en <strong>otros países</strong>, selecciona <strong>"Internacional"</strong> en la lista de Estados.</span>
+      </div>
+
       <div class="form-group">
         <label for="formRefugioEstado">Estado *</label>
         <select id="formRefugioEstado" required>
@@ -41,7 +46,22 @@
 
       <div class="form-group" id="formRefugioPaisGroup" style="display: none;">
         <label for="formRefugioPais">País *</label>
-        <input type="text" id="formRefugioPais" placeholder="Ej. Colombia, España" maxlength="60" />
+        <input type="text" id="formRefugioPais" list="paises-list" placeholder="Selecciona o escribe un país" maxlength="60" autocomplete="off" />
+        <datalist id="paises-list">
+          <option value="Colombia"></option>
+          <option value="Perú"></option>
+          <option value="Chile"></option>
+          <option value="Argentina"></option>
+          <option value="Ecuador"></option>
+          <option value="Brasil"></option>
+          <option value="España"></option>
+          <option value="Estados Unidos"></option>
+          <option value="México"></option>
+          <option value="Panamá"></option>
+          <option value="Uruguay"></option>
+          <option value="Costa Rica"></option>
+          <option value="República Dominicana"></option>
+        </datalist>
       </div>
 
       <div class="form-group">
