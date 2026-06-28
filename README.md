@@ -153,7 +153,7 @@ Si encuentras algo que mejorar o reportar, escribe al equipo de desarrollo — n
 
 ---
 <p align="center">
-  Hecho con ❤️ por la comunidad venezolana — <strong>Venezuela se levanta</strong>
+  Hecho con ❤️ por la comunidad venezolana — <strong>Porque cuando la solidaridad nos une, la esperanza se vuelve más fuerte</strong>
   <br><br>
   <a href="https://github.com/Projects-for-Venezuela/infoayudavenezuela/graphs/contributors">
     <img src="https://contrib.rocks/image?repo=Projects-for-Venezuela/infoayudavenezuela" />
