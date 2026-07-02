@@ -420,15 +420,15 @@ import ReportarNecesidadModal from "./ReportarNecesidadModal.astro";
       const que_necesitan = (document.getElementById('necFormNecesitan') as HTMLTextAreaElement).value.trim();
       const contacto = (document.getElementById('necFormContacto') as HTMLInputElement).value.trim() || null;
 
-      const catChecked = document.querySelectorAll('#necCategorias input:checked');
-      const categorias = Array.from(catChecked).map(el => (el as HTMLInputElement).value);
-
       let hasError = false;
+
+      const catChecked = document.querySelectorAll('#necCategorias input:checked');
+      if (catChecked.length === 0) { showNecError('necErrorCategoria', 'Selecciona al menos una categoría'); hasError = true; }
+      const categorias = Array.from(catChecked).map(el => (el as HTMLInputElement).value);
 
       if (!estado) { showNecError('necErrorEstado', 'Selecciona un estado'); hasError = true; }
       if (ciudad.length < 2) { showNecError('necErrorCiudad', 'Mínimo 2 caracteres'); hasError = true; }
       if (lugar.length < 2) { showNecError('necErrorLugar', 'Mínimo 2 caracteres'); hasError = true; }
-      if (categorias.length === 0) { showNecError('necErrorCategoria', 'Selecciona al menos una categoría'); hasError = true; }
       if (que_necesitan.length < 5) { showNecError('necErrorNecesitan', 'Describe qué necesitan (mín. 5 caracteres)'); hasError = true; }
 
       const htmlPattern = /<[^>]*>/;
@@ -451,8 +451,9 @@ import ReportarNecesidadModal from "./ReportarNecesidadModal.astro";
       submitBtn.disabled = true;
 
       try {
+        const que_necesitan_con_cat = `[${categorias.join(', ')}] ${que_necesitan}`;
         const { error } = await supabase.from('necesidades_urgentes').insert({
-          estado, ciudad, lugar, direccion, que_necesitan, contacto, categorias, verificado: false
+          estado, ciudad, lugar, direccion, que_necesitan: que_necesitan_con_cat, contacto, verificado: false
         });
         if (error) throw error;
         reportarNecesidadForm.style.display = 'none';
