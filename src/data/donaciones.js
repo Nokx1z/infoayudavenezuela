@@ -3,7 +3,6 @@ export const enfoques = [
   { id: "ninez", label: "Niñez e infancia" },
   { id: "alimentacion", label: "Alimentación" },
   { id: "vivienda", label: "Vivienda y refugio" },
-  { id: "religiosa", label: "Obra de base religiosa" },
   { id: "humanitaria_general", label: "Respuesta humanitaria general" },
 ];
 
@@ -50,7 +49,7 @@ export const organizaciones = [
   {
     nombre: "Cáritas de Venezuela",
     tipo: "Obra religiosa",
-    enfoque: "religiosa",
+    enfoque: "ninez",
     pais: "Venezuela",
     descripcion:
       "Red de la Iglesia Católica con presencia nacional: salud, nutrición infantil, ollas comunitarias y medicamentos.",

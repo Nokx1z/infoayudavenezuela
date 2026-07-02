@@ -395,7 +395,13 @@ const paisBase = "inline-flex items-center min-h-11 px-[13px] rounded-full borde
       render();
     }, 250));
 
-    if (ssrMode) initSSR();
+    const enfoqueParam = new URLSearchParams(location.search).get("enfoque");
+    const enfoqueBtn = enfoqueParam
+      ? (enfoqueGroup?.querySelector(`[data-enfoque="${CSS.escape(enfoqueParam)}"]`) as HTMLElement | null)
+      : null;
+
+    if (enfoqueBtn) enfoqueBtn.click();
+    else if (ssrMode) initSSR();
     else render();
   }
 </script>

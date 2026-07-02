@@ -13,7 +13,7 @@ interface RecursoNinez {
 
 const recursos: RecursoNinez[] = [
   {
-    titulo: "Cómo acompañar a niños y niñas tras un desastre",
+    titulo: "Cómo acompañar a la niñez tras un desastre",
     descripcion: "Guía para padres, madres, tutores y educadores: cómo hablar con la niñez, reconocer sus reacciones y darles contención en los primeros días después de una emergencia.",
     fuente: "UNICEF",
     detalle: "Guía para padres, madres, tutores y educadores",
@@ -29,14 +29,14 @@ const recursos: RecursoNinez[] = [
     tipo: "externo",
   },
   {
-    titulo: "Niños separados o no acompañados",
-    descripcion: "Qué hacer y a quién acudir si se identifica a un niño solo o separado de su familia en un refugio.",
+    titulo: "Niñez separada o no acompañada",
+    descripcion: "Qué hacer y a quién acudir si hay niñas o niños solos o separados de su familia en un refugio.",
     fuente: "Cecodap",
     url: "https://cecodap.org/guia-de-actuacion-para-la-proteccion-de-ninos-ninas-y-adolescentes-no-acompanados-en-contextos-de-emergencia/",
     tipo: "externo",
   },
   {
-    titulo: "Primeros auxilios psicológicos para niños y niñas",
+    titulo: "Primeros auxilios psicológicos para la niñez",
     descripcion: "Guía práctica de apoyo psicosocial elaborada tras un terremoto, con foco específico en la niñez.",
     fuente: "UNICEF Chile",
     detalle: "Para Reconstruir la Vida de los Niños y Niñas",
@@ -52,8 +52,15 @@ const recursos: RecursoNinez[] = [
     tipo: "externo",
   },
   {
+    titulo: "Acompañamiento emocional en crisis o catástrofes",
+    descripcion: "Pautas breves y accionables para contener emocionalmente a la niñez y la adolescencia tras una crisis o un desastre natural: validar sus emociones, limitar la exposición a noticias y transmitir calma.",
+    fuente: "Save the Children España",
+    url: "https://www.savethechildren.es/apoyo-emocional-infancia-en-catastrofes",
+    tipo: "externo",
+  },
+  {
     titulo: "Apoyo emocional para quien cuida",
-    descripcion: "El bienestar del voluntario también importa: recursos breves de autocuidado para quien acompaña a niños en contextos de crisis.",
+    descripcion: "El bienestar de quien cuida también importa: recursos breves de autocuidado para quien acompaña a la niñez en contextos de crisis.",
     fuente: "Recurso del sitio",
     url: "/salud-mental",
     tipo: "proximamente",
@@ -68,7 +75,7 @@ interface GrupoDonacion {
 
 const gruposDonacion: GrupoDonacion[] = [
   {
-    grupo: "Para los más pequeños",
+    grupo: "Primera infancia",
     rango: "0 a 5 años",
     items: [
       "Pañales de todas las tallas y toallitas húmedas.",
@@ -79,7 +86,7 @@ const gruposDonacion: GrupoDonacion[] = [
     ],
   },
   {
-    grupo: "Para niños más grandes",
+    grupo: "Niñez en edad escolar",
     rango: "6 a 12 años",
     items: [
       "Ropa y calzado por talla y temporada.",
@@ -91,22 +98,209 @@ const gruposDonacion: GrupoDonacion[] = [
   },
 ];
 
-const pageTitle = "Ayuda para los más pequeños";
-const pageDescription = "Recursos verificados para cuidar y proteger a niños y niñas durante la emergencia.";
+const multimedia: RecursoNinez[] = [
+  {
+    titulo: "Cuidándonos unos a otros",
+    descripcion: "Videos, juegos y actividades de Plaza Sésamo para acompañar a la niñez y las familias en momentos de estrés: manejo de emociones, rutinas y contención.",
+    fuente: "Sesame Workshop / Plaza Sésamo",
+    url: "https://www.plazasesamo.com/cuidandonos",
+    tipo: "externo",
+  },
+  {
+    titulo: "Recursos en español para familias",
+    descripcion: "Centro con videos, juegos y guías sobre sentimientos, emergencias y duelo para acompañar a la niñez en momentos difíciles.",
+    fuente: "Sesame Workshop",
+    url: "https://sesameworkshop.org/recursos-espanol/",
+    tipo: "externo",
+  },
+  {
+    titulo: "Curso de Crianza Positiva",
+    descripcion: "Curso gratuito en videos con especialistas: manejo de emociones, límites con amor, importancia del juego y autocuidado de quien cuida.",
+    fuente: "UNICEF México",
+    url: "https://www.unicef.org/mexico/buentrato/curso-crianza-positiva",
+    tipo: "externo",
+  },
+  {
+    titulo: "Khan Academy en Español",
+    descripcion: "Plataforma gratuita de aprendizaje en español para mantener a la niñez y la adolescencia estudiando durante el desplazamiento. Se usa en el navegador, sin instalar nada.",
+    fuente: "Khan Academy",
+    url: "https://es.khanacademy.org",
+    tipo: "externo",
+  },
+];
+
+interface Imprimible {
+  titulo: string;
+  descripcion: string;
+  fuente: string;
+  url: string;
+  tipo: "descarga" | "externo";
+  meta?: string;
+}
+
+const imprimibles: Imprimible[] = [
+  {
+    titulo: "Libro para colorear «Mundo Animal»",
+    descripcion: "Láminas de animales para colorear, con el nombre en español e inglés. No necesita más que una impresora y creyones.",
+    fuente: "Aportado por el equipo",
+    url: "/ninez/imprimibles/libro-colorear-mundo-animal.pdf",
+    tipo: "descarga",
+    meta: "PDF · 4 MB",
+  },
+  {
+    titulo: "Tarjetas de emociones",
+    descripcion: "Ocho tarjetas ilustradas (feliz, triste, enojado, miedo, sorpresa, asco, amor, calma) para que la niñez señale cómo se siente cuando le cuesta decirlo con palabras.",
+    fuente: "Aportado por el equipo",
+    url: "/ninez/img/tarjetas-emociones.jpeg",
+    tipo: "descarga",
+    meta: "Imagen · 208 KB",
+  },
+  {
+    titulo: "Cuaderno de actividades lúdicas",
+    descripcion: "Actividades para armar en familia un plan de emergencia, pensadas para que la niñez las realice en casa o en espacios temporales.",
+    fuente: "Save the Children Perú",
+    url: "https://resourcecentre.savethechildren.net/es/document/children-activity-notebook-everyone-at-home-works-the-family-emergency-plan",
+    tipo: "externo",
+  },
+  {
+    titulo: "Cuadernillo de competencias socioemocionales (7 a 15 años)",
+    descripcion: "Actividades para colorear y dibujar orientadas a identificar y expresar emociones (máscaras de emociones, mapeo corporal, autorretrato).",
+    fuente: "Save the Children / UNICEF Honduras",
+    url: "https://www.unicef.org/honduras/media/4431/file/SAVE%20THE%20CHILDREN%20CUADERNILLO%207%20A%2015.pdf.pdf",
+    tipo: "externo",
+    meta: "PDF",
+  },
+];
+
+interface Cuento {
+  titulo: string;
+  descripcion: string;
+  fuente: string;
+  url: string;
+  tipo: "descarga" | "externo";
+  badge: string;
+  meta?: string;
+}
+
+const cuentos: Cuento[] = [
+  {
+    titulo: "¿Qué se movió en Venezuela?",
+    descripcion: "Cuento ilustrado en verso para explicarle a la niñez qué es un temblor y calmar el miedo después del sismo. De distribución gratuita.",
+    fuente: "Andrea Torres Blanchard",
+    url: "/ninez/cuentos/que-se-movio-en-venezuela.pdf",
+    tipo: "descarga",
+    badge: "Para leer aquí",
+    meta: "PDF · 2.8 MB",
+  },
+  {
+    titulo: "Biblioteca Virtual Infantil",
+    descripcion: "Cientos de cuentos, fábulas y poesía de dominio público para leer libremente. Páginas de texto muy livianas.",
+    fuente: "Bibliotecas Rurales Argentinas",
+    url: "https://www.bibliotecasrurales.org.ar/biblioteca-virtual-infantil.php",
+    tipo: "externo",
+    badge: "Enlace externo",
+  },
+  {
+    titulo: "Cuentos infantiles",
+    descripcion: "Portal de literatura infantil con cientos de cuentos clásicos y contemporáneos en español, a texto completo.",
+    fuente: "Biblioteca Virtual Miguel de Cervantes",
+    url: "https://www.cervantesvirtual.com/portales/biblioteca_literatura_infantil_juvenil/cuentos_infantiles/",
+    tipo: "externo",
+    badge: "Enlace externo",
+  },
+  {
+    titulo: "Cuentos que cuidan",
+    descripcion: "Colección de cuentos ilustrados sobre derechos, inclusión y protección de la primera infancia, cada uno con guía de actividades.",
+    fuente: "UNICEF",
+    url: "https://www.unicef.org/chile/documents/serie-cuentos-que-cuidan",
+    tipo: "externo",
+    badge: "Enlace externo",
+    meta: "PDF · pesado",
+  },
+  {
+    titulo: "Cuentos para dormir",
+    descripcion: "Cientos de cuentos cortos organizados por valores, pensados para leer antes de dormir. Incluye audiocuentos.",
+    fuente: "Cuentopia Educativa",
+    url: "https://cuentosparadormir.com/",
+    tipo: "externo",
+    badge: "Enlace externo",
+  },
+  {
+    titulo: "Cuentos infantiles cortos",
+    descripcion: "Cuentos cortos ilustrados para leer y aprender valores, con actividades relacionadas.",
+    fuente: "Árbol ABC",
+    url: "https://arbolabc.com/cuentos-infantiles-cortos",
+    tipo: "externo",
+    badge: "Enlace externo",
+  },
+  {
+    titulo: "Cuentos para la niñez",
+    descripcion: "Amplia colección de cuentos ilustrados en español para leer en línea.",
+    fuente: "Ririro",
+    url: "https://ririro.com/es/",
+    tipo: "externo",
+    badge: "Enlace externo",
+  },
+  {
+    titulo: "Cuentos para calmar y dormir",
+    descripcion: "Cuentos diseñados para calmar antes de dormir, con enfoque en autoestima y emociones. Se pueden leer en voz alta o escuchar en audio.",
+    fuente: "Émora",
+    url: "https://emora.es/cuentos-infantiles-para-dormir/",
+    tipo: "externo",
+    badge: "Enlace externo",
+  },
+  {
+    titulo: "Cuentos infantiles con audio",
+    descripcion: "Cuentos cortos gratuitos para leer, cada uno con su audiocuento para escuchar.",
+    fuente: "Mumablue",
+    url: "https://www.mumablue.com/blog/cuentos-infantiles-para-leer-cortos-gratis/",
+    tipo: "externo",
+    badge: "Enlace externo",
+  },
+  {
+    titulo: "Muchos Cuentos",
+    descripcion: "Catálogo de cuentos por edad y tema, con audiolibros, comprensión lectora y láminas para colorear.",
+    fuente: "Muchos Cuentos",
+    url: "https://muchoscuentos.com/",
+    tipo: "externo",
+    badge: "Enlace externo",
+  },
+];
+
+interface AccesoRapido {
+  label: string;
+  href: string;
+}
+
+const accesosRapidos: AccesoRapido[] = [
+  { label: "Explicarle qué pasó", href: "#recursos" },
+  { label: "Calmar a la niñez", href: "#cuentos" },
+  { label: "Actividades y juego", href: "#imprimibles" },
+  { label: "Videos para acompañar", href: "#videos" },
+  { label: "Quiero donar", href: "/donaciones?enfoque=ninez" },
+];
+
+const pageTitle = "Ayuda para la niñez";
+const pageDescription = "Recursos verificados para cuidar y proteger a la niñez durante la emergencia.";
+
+const enlacesLd: { titulo: string; url: string }[] = [
+  ...recursos.filter((r) => r.tipo === "externo"),
+  ...multimedia.filter((r) => r.tipo === "externo"),
+  ...imprimibles.filter((r) => r.tipo === "externo"),
+  ...cuentos.filter((c) => c.tipo === "externo"),
+].map((r) => ({ titulo: r.titulo, url: r.url }));
 
 const itemListLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
   name: pageTitle,
   description: pageDescription,
-  itemListElement: recursos
-    .filter((r) => r.tipo === "externo")
-    .map((r, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: r.titulo,
-      url: r.url,
-    })),
+  itemListElement: enlacesLd.map((r, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    name: r.titulo,
+    url: r.url,
+  })),
 };
 ---
 
@@ -124,33 +318,50 @@ const itemListLd = {
         Protección infantil
       </span>
       <h1 class="text-2xl sm:text-[1.9rem] font-extrabold tracking-tight leading-tight text-balance mb-2">
-        Ayuda para los <span class="text-yellow">más pequeños</span>
+        Ayuda para la <span class="text-yellow">niñez</span>
       </h1>
       <p class="text-sm sm:text-[0.9rem] text-white/85 max-w-[480px] mx-auto leading-relaxed text-balance">
-        Recursos verificados para cuidar y proteger a niños y niñas durante la emergencia.
+        Recursos verificados para cuidar y proteger a la niñez durante la emergencia.
       </p>
     </div>
   </header>
 
   <section aria-label="Mensaje de bienvenida" class="mb-8 bg-white rounded-card border border-border p-6 sm:p-7 shadow-[0_1px_2px_rgba(16,24,40,0.04)]">
     <p class="text-[1.02rem] sm:text-[1.08rem] font-semibold text-text leading-relaxed text-balance">
-      Después de estos días tan difíciles, muchos niños y niñas necesitan algo muy sencillo: sentirse seguros otra vez.
+      Después de estos días tan difíciles, gran parte de la niñez necesita algo muy sencillo: sentirse segura otra vez.
     </p>
     <p class="mt-3 text-[0.92rem] text-[#4B5563] leading-relaxed text-pretty">
-      No hace falta ser experto para ayudarles. A veces basta con sentarse a su lado, jugar un rato, escucharlos sin apuro, y saber a quién llamar si algo no anda bien.
+      No hace falta ser experto para ayudar. A veces basta con sentarse a su lado, jugar un rato, escucharla sin apuro, y saber a quién llamar si algo no anda bien.
     </p>
     <p class="mt-3 text-[0.92rem] text-[#4B5563] leading-relaxed text-pretty">
-      Aquí reunimos, en un solo lugar, recursos pensados por quienes más saben de esto, para que puedas cuidar a los más pequeños con cariño… y con la tranquilidad de estar haciendo lo correcto.
+      Aquí reunimos, en un solo lugar, recursos pensados por quienes más saben de esto, para que puedas cuidar a la niñez con cariño… y con la tranquilidad de estar haciendo lo correcto.
     </p>
   </section>
 
-  <section aria-labelledby="recursos-titulo" class="mb-10">
+  <nav aria-label="¿Qué necesitas ahora?" class="mb-10">
+    <span class="block mb-2 text-[0.68rem] font-bold tracking-[0.08em] uppercase text-muted">¿Qué necesitas ahora?</span>
+    <div class="flex flex-wrap gap-2">
+      {accesosRapidos.map((a) => (
+        <a
+          href={a.href}
+          class="inline-flex items-center min-h-11 px-[13px] rounded-full border-[1.5px] border-border bg-white text-[0.82rem] font-semibold text-[#374151] no-underline whitespace-nowrap transition-colors duration-150 hover:bg-[#F8F9FB] hover:border-blue hover:text-blue"
+        >{a.label}</a>
+      ))}
+    </div>
+  </nav>
+
+  <section id="recursos" aria-labelledby="recursos-titulo" class="mb-10 scroll-mt-24">
     <div class="mb-4">
-      <h2 id="recursos-titulo" class="flex items-center gap-2 text-[1.05rem] font-bold text-text tracking-tight text-balance">
-        <svg class="text-blue shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-        Recursos de protección y apoyo
-      </h2>
-      <p class="mt-1.5 text-[0.86rem] text-muted leading-relaxed text-pretty max-w-[640px]">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-11 h-11 shrink-0 rounded-xl bg-blue shadow-[0_2px_6px_rgba(0,36,125,0.28)]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        </span>
+        <div class="flex flex-col gap-1">
+          <h2 id="recursos-titulo" class="m-0 text-[1.2rem] font-extrabold tracking-tight leading-[1.1] text-blue text-balance">Recursos de protección y apoyo</h2>
+          <span class="block w-[42px] h-1 rounded-full bg-yellow"></span>
+        </div>
+      </div>
+      <p class="mt-3 text-[0.86rem] text-muted leading-relaxed text-pretty max-w-[640px]">
         Materiales elaborados por organismos con experiencia en protección infantil. Cada enlace lleva a una fuente confiable con orientación práctica.
       </p>
     </div>
@@ -158,30 +369,31 @@ const itemListLd = {
     <div class="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-4">
       {recursos.map((r) => (
         r.tipo === "proximamente" ? (
-          <article class="relative flex flex-col bg-white rounded-card border border-border p-5 shadow-[0_1px_2px_rgba(16,24,40,0.04)]">
-            <div class="flex items-start justify-between gap-3 mb-2">
-              <h3 class="text-[0.98rem] font-bold text-text leading-snug tracking-tight text-balance">{r.titulo}</h3>
-              <span class="shrink-0 inline-flex items-center px-2 py-0.5 rounded-pill text-[0.66rem] font-bold uppercase tracking-wide bg-bg text-muted border border-border">Próximamente</span>
+          <article class="relative flex flex-col bg-white rounded-card border border-border p-5 shadow-[0_1px_3px_rgba(16,24,40,0.06)]">
+            <div class="flex items-start justify-between gap-3 mb-2.5">
+              <span class="inline-flex items-center px-2.5 py-[3px] rounded-md bg-bg text-muted border border-border text-[0.66rem] font-bold uppercase tracking-wide">Próximamente</span>
             </div>
+            <h3 class="text-[0.98rem] font-bold text-text leading-snug tracking-tight text-balance mb-2">{r.titulo}</h3>
             <p class="text-[0.86rem] text-[#4B5563] leading-relaxed text-pretty">{r.descripcion}</p>
-            <span class="mt-auto pt-3 text-[0.74rem] font-semibold text-muted">{r.fuente}</span>
+            <span class="mt-auto pt-3 border-t border-border text-[0.74rem] font-semibold text-muted">{r.fuente}</span>
           </article>
         ) : (
           <a
             href={r.url}
             target={r.tipo === "externo" ? "_blank" : undefined}
             rel={r.tipo === "externo" ? "noopener noreferrer" : undefined}
-            class="group relative flex flex-col bg-white rounded-card border border-border p-5 no-underline shadow-[0_1px_2px_rgba(16,24,40,0.04)] transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-blue hover:shadow-[0_8px_24px_rgba(0,36,125,0.1)]"
+            class="group relative flex flex-col bg-white rounded-card border border-border p-5 no-underline shadow-[0_1px_3px_rgba(16,24,40,0.06)] transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-blue hover:shadow-[0_8px_24px_rgba(0,36,125,0.1)]"
           >
-            <div class="flex items-start justify-between gap-3 mb-2">
-              <h3 class="text-[0.98rem] font-bold text-text leading-snug tracking-tight text-balance">{r.titulo}</h3>
+            <div class="flex items-start justify-between gap-3 mb-2.5">
+              <span class="inline-flex items-center px-2.5 py-[3px] rounded-md bg-[#ECF1FB] text-blue text-[0.66rem] font-bold uppercase tracking-wide">Guía</span>
               <svg class="shrink-0 mt-0.5 text-muted transition-colors duration-200 group-hover:text-blue" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg>
             </div>
+            <h3 class="text-[0.98rem] font-bold text-text leading-snug tracking-tight text-balance mb-2">{r.titulo}</h3>
             <p class="text-[0.86rem] text-[#4B5563] leading-relaxed text-pretty">{r.descripcion}</p>
             {r.detalle && (
               <p class="mt-2 text-[0.78rem] text-muted italic leading-snug text-pretty">«{r.detalle}»</p>
             )}
-            <span class="mt-auto pt-3 text-[0.74rem] text-muted">
+            <span class="mt-auto pt-3 border-t border-border text-[0.74rem] text-muted">
               Fuente: <span class="font-semibold text-text">{r.fuente}</span>
             </span>
             {r.tipo === "externo" && <span class="sr-only">(se abre en una nueva pestaña)</span>}
@@ -191,12 +403,160 @@ const itemListLd = {
     </div>
   </section>
 
-  <section aria-labelledby="donar-titulo" class="mb-10">
+  <section id="videos" aria-labelledby="videos-titulo" class="mb-10 scroll-mt-24">
     <div class="mb-4">
-      <h2 id="donar-titulo" class="flex items-center gap-2 text-[1.05rem] font-bold text-text tracking-tight text-balance">
-        <svg class="text-blue shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></svg>
-        Qué se puede donar para niños y niñas
-      </h2>
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-11 h-11 shrink-0 rounded-xl bg-blue shadow-[0_2px_6px_rgba(0,36,125,0.28)]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="m10 8 5 3-5 3z"/><path d="M8 21h8"/></svg>
+        </span>
+        <div class="flex flex-col gap-1">
+          <h2 id="videos-titulo" class="m-0 text-[1.2rem] font-extrabold tracking-tight leading-[1.1] text-blue text-balance">Videos y recursos multimedia</h2>
+          <span class="block w-[42px] h-1 rounded-full bg-yellow"></span>
+        </div>
+      </div>
+      <p class="mt-3 text-[0.86rem] text-muted leading-relaxed text-pretty max-w-[640px]">
+        Mismo criterio: plataformas gratuitas, sin publicidad ni suscripción y en español. No alojamos video propio; enlazamos a organizaciones confiables.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-4">
+      {multimedia.map((r) => (
+        <a
+          href={r.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative flex flex-col bg-white rounded-card border border-border p-5 no-underline shadow-[0_1px_3px_rgba(16,24,40,0.06)] transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-blue hover:shadow-[0_8px_24px_rgba(0,36,125,0.1)]"
+        >
+          <div class="flex items-start justify-between gap-3 mb-2.5">
+            <span class="inline-flex items-center px-2.5 py-[3px] rounded-md bg-[#ECF1FB] text-blue text-[0.66rem] font-bold uppercase tracking-wide">Multimedia</span>
+            <svg class="shrink-0 mt-0.5 text-muted transition-colors duration-200 group-hover:text-blue" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </div>
+          <h3 class="text-[0.98rem] font-bold text-text leading-snug tracking-tight text-balance mb-2">{r.titulo}</h3>
+          <p class="text-[0.86rem] text-[#4B5563] leading-relaxed text-pretty">{r.descripcion}</p>
+          <span class="mt-auto pt-3 border-t border-border text-[0.74rem] text-muted">
+            Fuente: <span class="font-semibold text-text">{r.fuente}</span>
+          </span>
+          <span class="sr-only">(se abre en una nueva pestaña)</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-4 flex items-start gap-3 bg-white rounded-card border border-border p-4 sm:p-5 shadow-[0_1px_2px_rgba(16,24,40,0.04)]">
+      <svg class="shrink-0 mt-0.5 text-blue" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <p class="text-[0.86rem] text-[#4B5563] leading-relaxed text-pretty">
+        La Academia Americana de Pediatría recomienda un <strong class="text-text">máximo de 1 hora al día</strong> de contenido de calidad para la niñez de 2 a 5 años, siempre acompañada por una persona adulta. En el refugio, el video es un apoyo puntual para calmar, no un reemplazo del juego ni del acompañamiento presencial.
+      </p>
+    </div>
+  </section>
+
+  <section id="imprimibles" aria-labelledby="imprimibles-titulo" class="mb-10 scroll-mt-24">
+    <div class="mb-4">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-11 h-11 shrink-0 rounded-xl bg-blue shadow-[0_2px_6px_rgba(0,36,125,0.28)]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+        </span>
+        <div class="flex flex-col gap-1">
+          <h2 id="imprimibles-titulo" class="m-0 text-[1.2rem] font-extrabold tracking-tight leading-[1.1] text-blue text-balance">Actividades para imprimir</h2>
+          <span class="block w-[42px] h-1 rounded-full bg-yellow"></span>
+        </div>
+      </div>
+      <p class="mt-3 text-[0.86rem] text-muted leading-relaxed text-pretty max-w-[640px]">
+        No dependen de electricidad ni conexión una vez impresos: funcionan con solo una impresora antes de salir hacia el refugio.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      {imprimibles.map((p) => (
+        <a
+          href={p.url}
+          download={p.tipo === "descarga" ? true : undefined}
+          target={p.tipo === "externo" ? "_blank" : undefined}
+          rel={p.tipo === "externo" ? "noopener noreferrer" : undefined}
+          class="group relative flex flex-col bg-white rounded-card border border-border p-5 no-underline shadow-[0_1px_3px_rgba(16,24,40,0.06)] transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-blue hover:shadow-[0_8px_24px_rgba(0,36,125,0.1)]"
+        >
+          <div class="flex items-start justify-between gap-3 mb-2.5">
+            <span class="inline-flex items-center px-2.5 py-[3px] rounded-md bg-[#ECF1FB] text-blue text-[0.66rem] font-bold uppercase tracking-wide">{p.tipo === "descarga" ? "Para imprimir" : "Enlace"}</span>
+            {p.tipo === "descarga" ? (
+              <svg class="shrink-0 mt-0.5 text-muted transition-colors duration-200 group-hover:text-blue" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+            ) : (
+              <svg class="shrink-0 mt-0.5 text-muted transition-colors duration-200 group-hover:text-blue" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            )}
+          </div>
+          <h3 class="text-[0.98rem] font-bold text-text leading-snug tracking-tight text-balance mb-2">{p.titulo}</h3>
+          <p class="text-[0.86rem] text-[#4B5563] leading-relaxed text-pretty">{p.descripcion}</p>
+          <span class="mt-auto pt-3 border-t border-border flex items-center justify-between gap-2 text-[0.74rem] text-muted">
+            <span>Fuente: <span class="font-semibold text-text">{p.fuente}</span></span>
+            {p.meta && <span class="shrink-0 tabular-nums">{p.meta}</span>}
+          </span>
+          {p.tipo === "externo" && <span class="sr-only">(se abre en una nueva pestaña)</span>}
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-4 flex items-start gap-3 bg-white rounded-card border border-border p-4 sm:p-5 shadow-[0_1px_2px_rgba(16,24,40,0.04)]">
+      <svg class="shrink-0 mt-0.5 text-blue" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <p class="text-[0.86rem] text-[#4B5563] leading-relaxed text-pretty">
+        Si puedes, deja también <strong class="text-text">copias impresas</strong> de estos materiales en los puntos de acopio: quien los descubre ya en el refugio puede no tener cómo imprimirlos ahí.
+      </p>
+    </div>
+  </section>
+
+  <section id="cuentos" aria-labelledby="cuentos-titulo" class="mb-10 scroll-mt-24">
+    <div class="mb-4">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-11 h-11 shrink-0 rounded-xl bg-blue shadow-[0_2px_6px_rgba(0,36,125,0.28)]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></svg>
+        </span>
+        <div class="flex flex-col gap-1">
+          <h2 id="cuentos-titulo" class="m-0 text-[1.2rem] font-extrabold tracking-tight leading-[1.1] text-blue text-balance">Cuentos para leerles</h2>
+          <span class="block w-[42px] h-1 rounded-full bg-yellow"></span>
+        </div>
+      </div>
+      <p class="mt-3 text-[0.86rem] text-muted leading-relaxed text-pretty max-w-[640px]">
+        Historias para leer juntos: explican lo que pasó, acompañan la calma antes de dormir y ayudan a hablar de las emociones.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(320px,1fr))] gap-4">
+      {cuentos.map((c) => (
+        <a
+          href={c.url}
+          download={c.tipo === "descarga" ? true : undefined}
+          target={c.tipo === "externo" ? "_blank" : undefined}
+          rel={c.tipo === "externo" ? "noopener noreferrer" : undefined}
+          class="group relative flex flex-col bg-white rounded-card border border-border p-5 no-underline shadow-[0_1px_3px_rgba(16,24,40,0.06)] transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-blue hover:shadow-[0_8px_24px_rgba(0,36,125,0.1)]"
+        >
+          <div class="flex items-start justify-between gap-3 mb-2.5">
+            <span class="inline-flex items-center px-2.5 py-[3px] rounded-md bg-[#ECF1FB] text-blue text-[0.66rem] font-bold uppercase tracking-wide">{c.badge}</span>
+            {c.tipo === "descarga" ? (
+              <svg class="shrink-0 mt-0.5 text-muted transition-colors duration-200 group-hover:text-blue" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>
+            ) : (
+              <svg class="shrink-0 mt-0.5 text-muted transition-colors duration-200 group-hover:text-blue" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            )}
+          </div>
+          <h3 class="text-[0.98rem] font-bold text-text leading-snug tracking-tight text-balance mb-2">{c.titulo}</h3>
+          <p class="text-[0.86rem] text-[#4B5563] leading-relaxed text-pretty">{c.descripcion}</p>
+          <span class="mt-auto pt-3 border-t border-border flex items-center justify-between gap-2 text-[0.74rem] text-muted">
+            <span>Fuente: <span class="font-semibold text-text">{c.fuente}</span></span>
+            {c.meta && <span class="shrink-0 tabular-nums">{c.meta}</span>}
+          </span>
+          {c.tipo === "externo" && <span class="sr-only">(se abre en una nueva pestaña)</span>}
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section id="donar" aria-labelledby="donar-titulo" class="mb-10 scroll-mt-24">
+    <div class="mb-4">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center justify-center w-11 h-11 shrink-0 rounded-xl bg-blue shadow-[0_2px_6px_rgba(0,36,125,0.28)]">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/></svg>
+        </span>
+        <div class="flex flex-col gap-1">
+          <h2 id="donar-titulo" class="m-0 text-[1.2rem] font-extrabold tracking-tight leading-[1.1] text-blue text-balance">Qué se puede donar para la niñez</h2>
+          <span class="block w-[42px] h-1 rounded-full bg-yellow"></span>
+        </div>
+      </div>
     </div>
 
     <div class="mb-4 flex items-start gap-3 bg-white rounded-card border border-border p-4 sm:p-5 shadow-[0_1px_2px_rgba(16,24,40,0.04)]">
@@ -239,7 +599,7 @@ const itemListLd = {
       Descargo de responsabilidad
     </h2>
     <p class="text-[#991B1B] text-[0.9rem] leading-relaxed mt-2 text-pretty">
-      Los recursos enlazados aquí son elaborados por organismos especializados en protección infantil y apoyo psicosocial. Este sitio <strong>no sustituye la atención de un profesional</strong>; ante una situación de riesgo inmediato para un niño o niña, contacta a los canales de emergencia disponibles en el refugio o comunidad.
+      Los recursos enlazados aquí son elaborados por organismos especializados en protección infantil y apoyo psicosocial. Este sitio <strong>no sustituye la atención de un profesional</strong>; ante una situación de riesgo inmediato para la niñez, contacta a los canales de emergencia disponibles en el refugio o comunidad.
     </p>
   </section>
 
