@@ -11,6 +11,7 @@ export async function GET() {
     { loc: "/necesidades", priority: "0.9", changefreq: "hourly" },
     { loc: "/refugios", priority: "0.8", changefreq: "hourly" },
     { loc: "/insumos", priority: "0.7", changefreq: "weekly" },
+    { loc: "/proteccion-infantil", priority: "0.6", changefreq: "monthly" },
     { loc: "/noticias", priority: "0.7", changefreq: "daily" },
     { loc: "/sobre-nosotros", priority: "0.6", changefreq: "monthly" },
     { loc: "/agradecimientos", priority: "0.4", changefreq: "weekly" },
