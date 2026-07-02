@@ -1,5 +1,5 @@
 ---
-import SugerirRefugioModal from "./SugerirRefugioModal.astro";
+import SugerirRefugioModal from "../modals/SugerirRefugioModal.astro";
 ---
 <section class="bg-white border border-border rounded-xl p-4 sm:p-5 mb-4 mt-6 shadow-sm">
   <div class="flex justify-between items-center mb-4 flex-wrap gap-2">
@@ -22,8 +22,8 @@ import SugerirRefugioModal from "./SugerirRefugioModal.astro";
 <SugerirRefugioModal />
 
 <script>
-  import { supabase } from "../lib/supabase";
-  import { escapeHtml } from "../lib/escape";
+import { supabase } from "../../lib/supabase";
+import { escapeHtml } from "../../lib/escape";
 
   const grid = document.getElementById('refugiosSectionGrid');
 

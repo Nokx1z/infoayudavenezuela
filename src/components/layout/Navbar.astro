@@ -1,7 +1,7 @@
 ---
-import SugerirCentroModal from "./SugerirCentroModal.astro";
-import SugerirEnlaceModal from "./SugerirEnlaceModal.astro";
-import ReportarNecesidadModal from "./ReportarNecesidadModal.astro";
+import SugerirCentroModal from "../modals/SugerirCentroModal.astro";
+import SugerirEnlaceModal from "../modals/SugerirEnlaceModal.astro";
+import ReportarNecesidadModal from "../modals/ReportarNecesidadModal.astro";
 ---
 
 <div class="flex h-2" aria-hidden="true">
@@ -118,7 +118,7 @@ import ReportarNecesidadModal from "./ReportarNecesidadModal.astro";
 <ReportarNecesidadModal />
 
 <script>
-  import { supabase } from "../lib/supabase";
+  import { supabase } from "../../lib/supabase";
 
   const navRefreshBtn = document.getElementById('navRefreshBtn');
   if (navRefreshBtn) {

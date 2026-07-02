@@ -1,5 +1,5 @@
 ---
-import { safeUrl } from "../lib/escape";
+import { safeUrl } from "../../lib/escape";
 
 export interface Props {
   enlaces: any[];
@@ -36,8 +36,8 @@ const { enlaces } = Astro.props;
 <div id="enlacesFallbackData" data-enlaces={JSON.stringify(enlaces)} style="display: none;"></div>
 
 <script>
-  import { supabase } from "../lib/supabase";
-  import { escapeHtml, safeUrl } from "../lib/escape";
+import { supabase } from "../../lib/supabase";
+import { escapeHtml, safeUrl } from "../../lib/escape";
 
   const fallbackEl = document.getElementById('enlacesFallbackData') as HTMLElement;
   const fallbackData = JSON.parse(fallbackEl?.dataset?.enlaces || '[]');
