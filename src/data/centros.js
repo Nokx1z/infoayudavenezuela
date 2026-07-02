@@ -31,38 +31,6 @@ export function flagUrl(estado) {
   return `/flags/${file}.webp`;
 }
 
-export const flagColors = {
-  "Distrito Capital": ["#CF142B", "#FFCC00", "#CF142B"],
-  Miranda: ["#CF142B", "#FFCC00", "#008000"],
-  "La Guaira": ["#00247D", "#FFFFFF", "#00247D"],
-  Aragua: ["#CF142B", "#FFCC00", "#008000"],
-  Carabobo: ["#CF142B", "#FFCC00", "#008000"],
-  Lara: ["#CF142B", "#FFCC00", "#008000"],
-  Sucre: ["#CF142B", "#FFCC00", "#008000"],
-  "Nueva Esparta": ["#00247D", "#FFCC00", "#CF142B"],
-  Anzoátegui: ["#00247D", "#FFFFFF", "#00247D"],
-  Bolívar: ["#FFCC00", "#008000", "#CF142B"],
-  Barinas: ["#008000", "#FFCC00", "#008000"],
-  Monagas: ["#CF142B", "#FFCC00", "#008000"],
-  Yaracuy: ["#FFCC00", "#00247D", "#CF142B"],
-};
-
-export const flagIcons = {
-  "Distrito Capital": "🏛️",
-  Miranda: "⛰️",
-  "La Guaira": "🏖️",
-  Aragua: "🌋",
-  Carabobo: "⚙️",
-  Lara: "🌅",
-  Sucre: "🌊",
-  "Nueva Esparta": "🏝️",
-  Anzoátegui: "🏖️",
-  Bolívar: "🌳",
-  Barinas: "🌾",
-  Monagas: "🌴",
-  Yaracuy: "🍊",
-};
-
 // FALLBACK EXTRAÍDO: Si el JSON es plano, hardcodeamos la lista global para evitar undefined
 export const insumos = Array.isArray(raw)
   ? [
